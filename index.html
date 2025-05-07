@@ -72,30 +72,20 @@
         video.muted = false;
         soundEnabled = true;
 
-        // Ocultar botón
         playBtn.style.opacity = 0;
         setTimeout(() => playBtn.style.display = 'none', 500);
 
-        // Mostrar mensaje animado
         message.classList.add("show");
+        setTimeout(() => message.classList.remove("show"), 3000);
 
-        // Desaparecer mensaje después de unos segundos
-        setTimeout(() => {
-          message.classList.remove("show");
-        }, 3000);
-
-        // Iniciar el video brevemente para desbloquear el audio
         video.play();
-        video.pause();
+        video.pause(); // "desbloqueo" de autoplay con sonido
       }
     </script>
   </head>
 
   <body style="margin: 0; overflow: hidden;">
-    <!-- BOTÓN DE ACTIVAR SONIDO -->
     <button id="playButton" onclick="enableSoundAndPlay()">Reproducir con sonido</button>
-
-    <!-- MENSAJE DE BIENVENIDA -->
     <div id="welcomeMessage">🎉 ¡Sonido activado! Apunta al marcador para ver el video 🎥</div>
 
     <a-scene
@@ -108,7 +98,7 @@
       <a-assets>
         <video
           id="vid"
-          src="https://drive.google.com/file/d/1obM7qfp-vF3KHS6MgstZNb9cyI8wvO4N/view"
+          src="assets/asset.mp4"
           preload="auto"
           loop
           crossorigin
@@ -133,7 +123,6 @@
         cursor="fuse: false; rayOrigin: mouse;"
         id="markerA"
       >
-        <!-- VIDEO RECTANGULAR FIJO -->
         <a-video
           src="#vid"
           scale="1.78 1 1"
@@ -148,3 +137,4 @@
     </a-scene>
   </body>
 </html>
+
