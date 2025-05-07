@@ -102,16 +102,14 @@
       vr-mode-ui="enabled: false"
       loading-screen="enabled: false;"
       arjs='sourceType: webcam; debugUIEnabled: false;'
-      id="scene"
       embedded
       gesture-detector
     >
       <a-assets>
         <video
           id="vid"
-          src="assets/asset.mp4"
+          src="https://drive.google.com/uc?export=download&id=1obM7qfp-vF3KHS6MgstZNb9cyI8wvO4N"
           preload="auto"
-          response-type="arraybuffer"
           loop
           crossorigin
           webkit-playsinline
@@ -127,19 +125,19 @@
         url="assets/marker.patt"
         videohandler
         smooth="true"
-        smoothCount="10"
-        smoothTolerance="0.01"
-        smoothThreshold="5"
+        smoothCount="30"
+        smoothTolerance="0.001"
+        smoothThreshold="2"
         raycaster="objects: .clickable"
         emitevents="true"
         cursor="fuse: false; rayOrigin: mouse;"
         id="markerA"
       >
-        <!-- VIDEO RECTANGULAR -->
+        <!-- VIDEO RECTANGULAR FIJO -->
         <a-video
           src="#vid"
           scale="1.78 1 1"
-          position="0 0.1 0"
+          position="0 0.01 0"
           rotation="-90 0 0"
           class="clickable"
           gesture-handler
